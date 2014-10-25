@@ -1,0 +1,22 @@
+<!-- encoding utf-8-->
+<!DOCTYPE html>
+<html ng-app="contacts">
+
+	<head>
+		<meta charset="utf-8"/>
+		<script type="text/javascript" src="angular.min.js"></script>
+		<script type="text/javascript" src="app.js"></script>
+		<script type="text/javascript" src="filters.js"></script>
+		<script type="text/javascript" src="components.js"></script>
+		<link rel="stylesheet" type="text/css" href="bootstrap.min.css"/>
+	</head>
+	<body ng-controller="ContactController as contactBook">
+		<div class="panel panel-info">
+			<div class="panel-heading"> <h1>Carnet de contacts</h1></div>
+			<div class="panel-body">Votre carnet contient {{contactBook.contacts.length}} contacts <img id="spinner" class="pull-left" ng-src="ajax-loader.gif" style="display:block;"/></div>
+		</div>
+		<!-- -Contact Table -->
+		<contact-table></contact-table>
+	</body>
+
+</html>

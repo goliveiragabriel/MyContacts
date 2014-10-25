@@ -1,0 +1,16 @@
+<table class="table">
+	<tr>
+		<th><a href="#" ng-click="table.sortTable('name', table.ascDirection)"> Nom</a></th>
+		<th><a href="#" ng-click="table.sortTable('firstName', table.ascDirection)">Prénom</a></th>
+		<th><a href="#" ng-click="table.sortTable('birthDate', table.ascDirection)">Age</a></th>
+		<th><a href="#" ng-click="table.sortTable('tel', table.ascDirection)">Téléphone</a></th>
+		<th><a href="#" ng-click="table.sortTable('address', table.ascDirection)">Addresse</a></th>
+	</tr>
+	<tr ng-repeat="contact in contactBook.contacts|orderBy:table.fieldName:table.ascDirection" class="ng-class:table.highlight(contact.birthDate)">
+		<td> {{contact.name}} </td>
+		<td> {{contact.firstName}} </td>
+		<td> {{contact.birthDate | age }} </td>
+		<td> <a href="tel:+{{contact.tel}}">{{contact.tel}}</a></td>
+		<td> <a href="http://maps.google.com/maps/place/{{contact.address}}" target="_blank">{{contact.address}} </a></td>
+	</tr>
+</table>
